@@ -1,0 +1,10 @@
+[
+  {
+    "name": "amount",
+    "pattern": "^£?(\\d{1,5}|\\d{0,5}\\.\\d{1,2})$"
+  },
+  {
+    "name": "portfolio_name",
+    "pattern": "(\\bAndrzej\\b|\\bKraviec\\b|\\bAndrzej\\ Kraviec\\b|\\bAricka\\b|\\bLewis\\b|\\bAricka\\ Lewis\\b|\\bBenjamin\\b|\\bParker\\b|\\bBenjamin\\ Parker\\b|\\bFlorianne\\b|\\bPaget\\b|\\bFlorianne\\ Paget\\b|\\bKanya\\b|\\bBunnag\\b|\\bKanya\\ Bunnag\\b|\\bMasami\\b|\\bNishimura\\b|\\bMasami\\ Nishimura\\b|\\bPaulinho\\b|\\bSimoes\\b|\\bPaulinho\\ Simoes\\b|\\bRalph\\b|\\bAxelsen\\b|\\bRalph\\ Axelsen\\b|\\bWilliam\\b|\\bShore\\b|\\bWilliam\\ Shore\\b|\\bandrzej\\b|\\bkraviec\\b|\\bandrzej\\ kraviec\\b|\\baricka\\b|\\blewis\\b|\\baricka\\ lewis\\b|\\bbenjamin\\b|\\bparker\\b|\\bbenjamin\\ parker\\b|\\bflorianne\\b|\\bpaget\\b|\\bflorianne\\ paget\\b|\\bkanya\\b|\\bbunnag\\b|\\bkanya\\ bunnag\\b|\\bmasami\\b|\\bnishimura\\b|\\bmasami\\ nishimura\\b|\\bpaulinho\\b|\\bsimoes\\b|\\bpaulinho\\ simoes\\b|\\bralph\\b|\\baxelsen\\b|\\bralph\\ axelsen\\b|\\bwilliam\\b|\\bshore\\b|\\bwilliam\\ shore\\b|\\balois\\ reiter\\b|\\balois\\b|\\breiter\\b|\\bAlois\\ Reiter\\b|\\bAlois\\b|\\bReiter\\b)"
+  }
+]

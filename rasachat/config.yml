@@ -1,0 +1,64 @@
+# Configuration for Rasa NLU.
+recipe: default.v1
+
+# https://rasa.com/docs/rasa/nlu/components/
+language: en
+# pipeline: supervised_embeddings
+# pipeline: supervised_embeddings
+
+assistant_id: 20230629-171100-full-pad
+
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+policies:
+- name: MemoizationPolicy
+- name: TEDPolicy
+  epochs: 200
+- name: RulePolicy
+  nlu_threshold: 0.25
+  core_threshold: 0.25
+  fallback_action_name: "action_fallback"
+  # - name: MemoizationPolicy
+  # - name: RulePolicy
+  # - name: UnexpecTEDIntentPolicy
+  #   max_history: 5
+  #   epochs: 100
+  # - name: TEDPolicy
+  #   max_history: 5
+  #   epochs: 100
+  #   constrain_similarities: true
+
+# pipeline: supervised_embeddings
+
+pipeline: #null
+  - name: WhitespaceTokenizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+  - name: RegexEntityExtractor
+    # Text will be processed with case sensitive as default
+    case_sensitive: False
+    # use lookup tables to extract entities
+    use_lookup_tables: True
+    # use match word boundaries for lookup table
+    use_word_boundaries: True
+  - name: EntitySynonymMapper
+  - name: DIETClassifier
+    epochs: 100
+    constrain_similarities: true
+    entity_recognition: False
+  - name: "SpacyNLP"
+    model: "en_core_web_md"
+    # model: "en_core_web_lg"
+    case_sensitive: False
+  # - name: "SpacyEntityExtractor"
+  #   dimensions: ["PERSON", "DATE", "TIME"] #"LOC", "ORG", "PRODUCT"]
+  - name: ResponseSelector
+    epochs: 100
+    constrain_similarities: true
+  - name: FallbackClassifier
+    threshold: 0.3
+    ambiguity_threshold: 0.1

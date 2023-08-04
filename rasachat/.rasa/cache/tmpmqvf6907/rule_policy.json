@@ -1,0 +1,22 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"unfollow_everyone\"}}]": "utter_are_you_sure_unfollow_everyone",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"unfollow_everyone\"}}, {\"prev_action\": {\"action_name\": \"utter_are_you_sure_unfollow_everyone\"}, \"user\": {\"intent\": \"unfollow_everyone\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"follow_everyone\"}}]": "utter_please_follow_one_portfolio_at_a_time",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"follow_everyone\"}}, {\"prev_action\": {\"action_name\": \"utter_please_follow_one_portfolio_at_a_time\"}, \"user\": {\"intent\": \"follow_everyone\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"newsfeed\"}}]": "utter_newsfeed",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"newsfeed\"}}, {\"prev_action\": {\"action_name\": \"utter_newsfeed\"}, \"user\": {\"intent\": \"newsfeed\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"thank_you\"}}]": "utter_no_problem",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"thank_you\"}}, {\"prev_action\": {\"action_name\": \"utter_no_problem\"}, \"user\": {\"intent\": \"thank_you\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent back",
+      "predicting default action with intent restart",
+      "predicting default action with intent session_start"
+    ]
+  }
+}
