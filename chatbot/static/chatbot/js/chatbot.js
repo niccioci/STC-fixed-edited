@@ -33,11 +33,11 @@ window.peopleVariants = new Map(window.people.map((person, idx) => [person, idxV
 // posts the credibility list of window.people, for first month. Subsequent months are followed in the update month
 
 
-const initialCredJSON = JSON.stringify(Object.fromEntries(window.peopleVariants));
+//const initialCredJSON = Object.fromEntries(window.peopleVariants);
 var post_url = server_url + "/credlevel/";
 var post_data = {
   month: month,
-  initialCredJSON, 
+  initialCredJSON: Object.fromEntries(window.peopleVariants), 
 }
 fetch(post_url, {
   method: 'POST',
@@ -52,7 +52,7 @@ fetch(post_url, {
 });
 
 
-console.log(initialCredJSON);
+console.log(post_data);
 
 
 $(document).ready(function () {  
@@ -351,13 +351,13 @@ $(document).ready(function () {
                       const newIdxVars = window.shuffleArray([ 0, 1, 2, 3, 4, 5 ]);
                       window.peopleVariants = new Map(window.people.map((person, idx) => [person, newIdxVars[idx % 6]]));
 
-                        const monthlyCredJSON = JSON.stringify(Object.fromEntries(window.peopleVariants));
+                        const monthlyCredJSON = Object.fromEntries(window.peopleVariants);
                         console.log(monthlyCredJSON);
 
                         var post_url = server_url + "/credlevel/";
                         var post_data1 = {
                           month: month,
-                          monthlyCredJSON, 
+                          monthlyCredJSON: Object.fromEntries(window.peopleVariants), 
                         }
                         fetch(post_url, {
                           method: 'POST',
